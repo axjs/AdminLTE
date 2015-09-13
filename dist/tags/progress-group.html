@@ -1,0 +1,15 @@
+<progress-group>
+    <div class="progress-group">
+        <span class="progress-text">{ text }</span>
+        <span class="progress-number"><b>{ current }</b>/{ max }</span>
+        <div class="progress sm">
+            <div class="progress-bar { 'progress-bar-' + color }" style="width: {current/max*100}%"></div>
+        </div>
+    </div>
+    <!-- /.progress-group -->
+    this.text = opts.text || '...'
+    this.max = opts.max || 100
+    this.current = opts.current || 50
+    this.color = opts.color || "green"
+
+</progress-group>

@@ -467,15 +467,7 @@
         <section class="content">
           <!-- Info boxes -->
           <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">CPU Traffic</span>
-                  <span class="info-box-number">90<small>%</small></span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
+            <div class="col-md-3 col-sm-6 col-xs-12" riot-tag="info-box"></div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
@@ -544,34 +536,10 @@
                       <p class="text-center">
                         <strong>Goal Completion</strong>
                       </p>
-                      <div class="progress-group">
-                        <span class="progress-text">Add Products to Cart</span>
-                        <span class="progress-number"><b>160</b>/200</span>
-                        <div class="progress sm">
-                          <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                        </div>
-                      </div><!-- /.progress-group -->
-                      <div class="progress-group">
-                        <span class="progress-text">Complete Purchase</span>
-                        <span class="progress-number"><b>310</b>/400</span>
-                        <div class="progress sm">
-                          <div class="progress-bar progress-bar-red" style="width: 80%"></div>
-                        </div>
-                      </div><!-- /.progress-group -->
-                      <div class="progress-group">
-                        <span class="progress-text">Visit Premium Page</span>
-                        <span class="progress-number"><b>480</b>/800</span>
-                        <div class="progress sm">
-                          <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                        </div>
-                      </div><!-- /.progress-group -->
-                      <div class="progress-group">
-                        <span class="progress-text">Send Inquiries</span>
-                        <span class="progress-number"><b>250</b>/500</span>
-                        <div class="progress sm">
-                          <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                        </div>
-                      </div><!-- /.progress-group -->
+                      <progress-group text="Add Products to Cart" current="160" max="200"  color="aqua"></progress-group>
+                      <progress-group text="Complete Purchase" current="310" max="400"  color="red"></progress-group>
+                      <progress-group text="Visit Premium Page" current="480" max="800" color="green"></progress-group>
+                      <progress-group text="Send Inquiries" current="250" max="500" color="yellow"></progress-group>
                     </div><!-- /.col -->
                   </div><!-- /.row -->
                 </div><!-- ./box-body -->
@@ -1299,5 +1267,15 @@
     <script src="dist/js/pages/dashboard2.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <!-- RIOT -->
+    <script src="dist/tags/info-box.html" type="riot/tag"></script>
+    <script src="dist/tags/progress-group.html" type="riot/tag"></script>
+    <script src="dist/js/riot/riot-compiler.js"></script>
+    <script>
+      riot.trigger || riot.observable(riot)
+      riot.compile(function() {
+        riot.mount('*')
+      })
+    </script>
   </body>
 </html>
