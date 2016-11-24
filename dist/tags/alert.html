@@ -1,0 +1,31 @@
+<alert>
+
+<div class="alert { 'alert-' + type } alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <h4><i class="icon fa {fa}"></i>{ title }</h4>{ text }
+</div>
+
+    this.text = opts.text || '...'
+    this.title = opts.title || ' Alert!'
+    // danger info warning success
+    this.type = opts.type || 'info'
+    this.fa = 'fa-ban'
+    this.on('update', function() {
+        switch (this.type) {
+            case 'danger' : 
+            this.fa = 'fa-ban'
+            break
+            case 'warning' : 
+            this.fa = 'fa-warning'
+            break
+            case 'success' : 
+            this.fa = 'fa-check'
+            break
+            case 'info' : 
+            default:
+            this.fa = 'fa-info'
+            break
+        }
+    })
+
+</alert>
